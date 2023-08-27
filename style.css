@@ -1,0 +1,242 @@
+/*
+Theme Name: Wooz Theme
+Theme URI: wooz/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor.
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wooz
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+
+/*
+    This file is for defining main layouts and styles of Wordpress website.
+
+
+*/
+
+body
+{
+    font-family:'SCoreDream';
+    margin:0;
+}
+
+/*
+    Define Root parameters
+
+*/
+:root
+{
+    --main-theme-color:rgba(25,25,112, 0.5);
+    --main-theme-text-color:white;
+    
+    --main-theme-post-title-color:darkblue;
+    --background-img:linear-gradient(90deg, rgba(14,14,14,1) 0%, rgba(71,71,71,1) 49%, rgba(22,22,22,1) 100%);
+}
+
+
+
+/*
+    Wooz header design
+
+*/
+
+.wooz_custom_header
+{
+    width:100%;
+    position:sticky;
+    top:0;
+    left:0;
+    right:0;
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    align-items:center;
+
+    background:var(--background-img);
+    color:var(--main-theme-text-color);
+
+    min-height:120px;
+
+    z-index:10;
+}
+
+.wooz_custom_header_logo_div
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    align-items:center;
+}
+
+.wooz_custom_header_logo_image
+{
+    width:120px;
+    margin:20px;
+}
+
+.wooz_custom_header_menu_list
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    list-style:none;
+}
+
+.wooz_custom_header_menu_list li
+{
+    margin-right:40px;
+    font-size:1.2rem;
+    font-weight: 600;
+}
+
+@media (max-width:720px)
+{
+    .wooz_custom_header_title_text, .wooz_custom_header_menus
+    {
+        display:none;
+    }
+
+    .wooz_custom_header_logo_image
+    {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-75%);
+ 
+    }
+}
+
+/**
+    custom footer design
+
+*/
+
+.wooz_custom_footer
+{
+    position:relative;
+    bottom:0;
+    left:0;
+    width:100%;
+
+    background:var(--background-img);
+    color:var(--main-theme-text-color);
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+
+    justify-content:space-around;
+
+    padding:20px;
+}
+
+.wooz_footer_info
+{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    justify-items: center;
+}
+
+.wooz_footer_info *
+{
+    margin:20px;
+}
+
+.wooz_footer_info .data_line_title
+{
+    font-weight:600;
+}
+
+
+/*
+    Wooz main section design
+
+*/
+
+.wooz_main_section
+{
+}
+
+.wooz_post_section
+{
+    position:relative;
+    height:10000px;
+}
+
+.wooz_main_post_link
+{
+    text-decoration: none;
+    padding:20px;
+    width:80%;
+    margin:20px;
+
+    box-shadow:5px 2px 50px 5px rgba(103, 79, 255, 0.1);
+    border-radius:15px;
+}
+
+.wooz_main_post_link a:link, .wooz_main_post_link a:visited
+{
+    color:black;
+    text-decoration:none;
+}
+
+.wooz_main_post_title
+{
+    color:var(--main-theme-post-title-color);
+}
+
+
+/*
+    main_open sidemenu_button
+*/
+
+.wooz_main_mobile_button
+{
+    display:none;
+    width:50px;
+    height:50px;
+    margin-left:20px;
+    background:transparent;
+
+    cursor:pointer;
+
+    border:1px solid white;
+    border-radius: 5px;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.wooz_main_mobile_button span
+{
+    width:30px;
+    height:3px;
+    margin:4px;
+    background-color: white;
+}
+
+.wooz_header_mobile_blank
+{
+    display:none;
+}
+
+@media (max-width:720px)
+{
+    .wooz_main_mobile_button
+    {
+        display:flex;
+    }
+
+    .wooz_header_mobile_blank
+    {
+        display:block;
+    }
+}
